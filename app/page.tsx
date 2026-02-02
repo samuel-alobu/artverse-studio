@@ -23,13 +23,11 @@ export default function Home() {
             <div className="text-center">
               <h1 className="text-5xl font-bold text-blue-300 mb-3">Create</h1>
               <p className="text-lg font-bold leading-7">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Temporibus et at, praesentium itaque aspernatur dolorum
-                possimus. Delectus voluptatem sequi error voluptatibus, saepe,
-                voluptate veritatis earum doloribus id similique fugiat dolore
-                quo nesciunt dolores distinctio! Officia, deserunt beatae.
-                Atque, expedita repellat. Suscipit doloribus perspiciatis nobis
-                reprehenderit.
+                Bring your artistic vision to life by creating and uploading
+                your work effortlessly. Whether it’s digital art, illustrations,
+                photography, or mixed media, our platform provides a seamless
+                way to showcase your creativity with high-quality presentation
+                and secure ownership.
               </p>
             </div>
           </div>
@@ -38,13 +36,11 @@ export default function Home() {
             <div className="text-center">
               <h1 className="text-5xl font-bold text-blue-300 mb-3">Share</h1>
               <p className="text-lg font-bold leading-7">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Temporibus et at, praesentium itaque aspernatur dolorum
-                possimus. Delectus voluptatem sequi error voluptatibus, saepe,
-                voluptate veritatis earum doloribus id similique fugiat dolore
-                quo nesciunt dolores distinctio! Officia, deserunt beatae.
-                Atque, expedita repellat. Suscipit doloribus perspiciatis nobis
-                reprehenderit.
+                Bring your artistic vision to life by creating and uploading
+                your work effortlessly. Whether it’s digital art, illustrations,
+                photography, or mixed media, our platform provides a seamless
+                way to showcase your creativity with high-quality presentation
+                and secure ownership.
               </p>
             </div>
             <Image
@@ -67,13 +63,10 @@ export default function Home() {
             <div className="text-center">
               <h1 className="text-5xl font-bold text-blue-300 mb-3">Ignite</h1>
               <p className="text-lg font-bold leading-7">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Temporibus et at, praesentium itaque aspernatur dolorum
-                possimus. Delectus voluptatem sequi error voluptatibus, saepe,
-                voluptate veritatis earum doloribus id similique fugiat dolore
-                quo nesciunt dolores distinctio! Officia, deserunt beatae.
-                Atque, expedita repellat. Suscipit doloribus perspiciatis nobis
-                reprehenderit.
+                Ignite inspiration, conversations, and opportunities through
+                your art. Transform creativity into impact by engaging
+                communities, unlocking new possibilities, and turning artistic
+                passion into recognition, growth, and lasting value.
               </p>
             </div>
           </div>
