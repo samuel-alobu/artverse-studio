@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Hydrate from "./components/Hydrate";
+import { getServerSession } from "next-auth/next";
+import {authOptions} from "@/pages/api/auth/[...nextauth]";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,18 +21,19 @@ export const metadata: Metadata = {
   description: "Art gallery and marketplace",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+const session = await getServerSession(authOptions)
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Hydrate>
-          <NavBar />
+          <NavBar user={session?.user} />
           {children}
         </Hydrate>
       </body>
