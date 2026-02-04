@@ -4,7 +4,7 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import Hydrate from "./components/Hydrate";
 import { getServerSession } from "next-auth/next";
-import {authOptions} from "@/pages/api/auth/[...nextauth]";
+import {authOptions} from "@/lib/auth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +32,8 @@ const session = await getServerSession(authOptions)
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Hydrate>
-          <NavBar user={session?.user} />
-          {children}
-        </Hydrate>
+        <NavBar user={session?.user} />
+        <Hydrate>{children}</Hydrate>
       </body>
     </html>
   );
