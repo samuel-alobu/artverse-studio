@@ -1,16 +1,17 @@
-"use client"
+import UploadForm from "../components/UploadForm";
+import ArtGallery from "../components/ArtGallery";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth-options";
 
-import React from 'react'
-import UploadForm from '../components/UploadForm';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+export default async function Page() {
+  const session = await getServerSession(authOptions);
 
-
-export async function page() {
-    const session = await getServerSession(authOptions)
   return (
-    <div>
-      <UploadForm user={session?.user} expires={session?.expires as string} />
+    <div className="w-full">
+      <div className="md:flex-row flex-col flex w-[89%] m-auto justify-between py-5 gap-5 lg:max-w-375">
+        <UploadForm user={session?.user} expires={session?.expires as string} />
+        <ArtGallery />
+      </div>
     </div>
-  )
+  );
 }

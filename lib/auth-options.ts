@@ -5,7 +5,6 @@ import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
-
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma!),
   providers: [
@@ -33,9 +32,7 @@ export const authOptions: NextAuthOptions = {
       },
       authorize: async (credentials) => {
         const user = await prisma!.user.findFirst({
-          where: {
-            email: credentials?.email as string,
-          },
+          where: { email: credentials?.email as string },
         });
         if (!user || user.password !== credentials?.password) {
           throw new Error("Wrong email or password");
@@ -51,5 +48,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
-export default NextAuth(authOptions);

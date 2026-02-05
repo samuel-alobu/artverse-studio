@@ -1,4 +1,6 @@
+import "server-only";
+
 import NextAuth from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { authOptions } from "@/lib/auth-options";
 
 export default NextAuth(authOptions);

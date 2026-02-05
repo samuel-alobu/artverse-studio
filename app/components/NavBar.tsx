@@ -7,11 +7,12 @@ import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
 import type { Session } from "next-auth";
 
-type NavBarProps = {
+export type NavBarProps = {
   user?: Session["user"];
+  expires?: string;
 };
 
-export default function NavBar({ user }: NavBarProps) {
+export default function NavBar({ user, expires }: NavBarProps) {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
   const menuHandler = () => setOpenMobileMenu((p) => !p);
@@ -32,7 +33,7 @@ export default function NavBar({ user }: NavBarProps) {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden absolute top-16 left-0 w-full bg-black text-white py-5 transition-all duration-300 ${
+          className={`md:hidden absolute top-16 left-0 w-full bg-black text-white py-5 transition-all duration-300 z-10 ${
             openMobileMenu ? "block" : "hidden"
           }`}
         >
@@ -67,7 +68,8 @@ export default function NavBar({ user }: NavBarProps) {
             </div>
           ) : (
             <div className="flex flex-col gap-5 items-center mt-4">
-              <span>Hello {user.name}!</span>
+              <span>Hello {user.name}</span>
+              {expires ? <small>Session expires: {expires}</small> : null}
               <Link
                 href="/api/auth/signout"
                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
@@ -126,7 +128,7 @@ export default function NavBar({ user }: NavBarProps) {
                 Signout
               </Link>
 
-              {user.image ? (
+              {user?.image ? (
                 <Image
                   src={user.image}
                   alt={user.name ?? "User"}

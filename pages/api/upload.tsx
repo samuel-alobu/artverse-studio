@@ -1,3 +1,5 @@
+import "server-only"
+
 import type { NextApiRequest, NextApiResponse } from "next";
 import { v2 as cloudinary } from "cloudinary";
 import multer from "multer";
